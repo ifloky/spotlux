@@ -1,0 +1,31 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}Хоккейная экипировка в Минске{% endblock title %}
+
+{% block content %}
+  <div class="home">
+    <a href="#">Все товары</a>
+  </div>
+  <div class="recomends">
+    <div class="rec-title">
+      <h3><span>Популярные товары</span></h3>
+    </div>
+  </div>
+  <div class="home-cards">
+    {% for product in products %}
+      <a href="{{ product.get_absolute_url}}">
+    <img src="{% if product.image %}{{ product.image.url }}{% else %} {% static "" %}{% endif %}" alt="detail__img">
+        <h5 class="card__title">{{product.name}}</h5>
+        {% if product.discount %}
+          <div class="card__discount">
+            <p class="line">{{product.price}}</p>
+            <p class="price">{{ product.sell_price}}</p>
+          </div>
+        {% else %}
+          <p class="price">{{product.price}}</p>
+        {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+{% endblock content %}

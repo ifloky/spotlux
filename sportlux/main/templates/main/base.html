@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock title %}</title>
+
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="heder__logo logo">
+        LOGO
+      </div>
+
+      <nav class="header__nav nav">
+        <ul>
+          <li class="nav__element"><a href="/">home</a></li>
+          <li class="nav__element"><a href="/catalog">catalog</a></li>
+          <li class="nav__element"><a href="/about">info</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__personal">
+        <button class="headed__btn btn">search</button>
+        <button class="headed__btn btn">profile</button>
+        <button class="headed__btn btn">cart</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="main-section">
+    <div class="container">
+      {% block content %}
+      {% endblock content %}
+    </div>
+  </section>
+
+  <script src="{% static 'C:\Users\PetrenkoMV\Desktop\sportlux\sportlux\main\static\js\index.js' %}"></script>
+</body>
+</html>
