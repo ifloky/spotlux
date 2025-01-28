@@ -1,0 +1,84 @@
+.header {
+  padding: 10px 20px;
+  background-color: rgb(70, 196, 255);
+}
+
+.header .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heder__logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.heder__logo img{
+  width: 30px;
+}
+
+.heder__logo p{
+  width: 40px;
+}
+
+.nav ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav__element {
+  list-style: none;
+
+}
+
+.nav__element a{
+  text-decoration: none; 
+  display: inline-block;
+  line-height: 1;
+  cursor: pointer; 
+}
+
+.nav__element a:after {
+    background-color: #231c41;
+    display: block;
+    content: "";
+    height: 2px; 
+    width: 0%;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+}
+
+.nav__element a:hover:after,
+.nav__element a:focus:after {
+    width: 100%;
+}
+
+.header__personal {
+  display: flex;
+  gap: 10px;
+}
+
+.header__btn::before {
+  margin-right: 5px;
+}
+
+.header__btn-search::before {
+  content: '🔎';
+}
+
+.header__btn-profile::before {
+  content: '🧟';
+}
+
+.header__btn-cart::before {
+  content: '🛒';
+}
+
+.main-section {
+}

@@ -1,7 +1,8 @@
 {% extends "main/base.html" %}
 {% load static %}
 
-{% block title %}Хоккейная экипировка в Минске{% endblock title %}
+
+{% block title %}Не трать лишнее время, делай простой выбор{% endblock title %}
 
 {% block content %}
   <div class="home">
@@ -15,7 +16,7 @@
   <div class="home-cards">
     {% for product in products %}
       <a href="{{ product.get_absolute_url}}">
-    <img src="{% if product.image %}{{ product.image.url }}{% else %} {% static "" %}{% endif %}" alt="detail__img">
+    <img src="{% if product.image %}{{ product.image.url }}{% else %} {% static "img\noimage.jpg" %}{% endif %}" alt="detail__img">
         <h5 class="card__title">{{product.name}}</h5>
         {% if product.discount %}
           <div class="card__discount">

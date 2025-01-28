@@ -6,13 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}{% endblock title %}</title>
 
-  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="shortcut icon" href="{% static 'img/logo.png' %}" >
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}"> 
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+
 </head>
 <body>
   <header class="header">
     <div class="container">
       <div class="heder__logo logo">
-        LOGO
+        <img src="{% static 'img\logo.png' %}" alt="logo">
+        <p>QuickPick </p>
       </div>
 
       <nav class="header__nav nav">
@@ -24,9 +30,9 @@
       </nav>
 
       <div class="header__personal">
-        <button class="headed__btn btn">search</button>
-        <button class="headed__btn btn">profile</button>
-        <button class="headed__btn btn">cart</button>
+        <button class="header__btn header__btn-search btn">search</button>
+        <button class="header__btn header__btn-profile btn">profile</button>
+        <button class="header__btn header__btn-cart btn">cart</button>
       </div>
     </div>
   </header>
@@ -38,6 +44,6 @@
     </div>
   </section>
 
-  <script src="{% static 'C:\Users\PetrenkoMV\Desktop\sportlux\sportlux\main\static\js\index.js' %}"></script>
+  <script src="{% static 'js\index.js' %}"></script>
 </body>
 </html>
