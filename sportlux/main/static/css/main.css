@@ -56,3 +56,7 @@ html {
 .btn:hover {
   background-color: transparent;
 }
+
+.container *{ 
+  color: #231c41;
+}
