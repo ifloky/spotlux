@@ -1,11 +1,16 @@
 {% extends "main/base.html" %}
+
 {% load static %}
+
 
 {% block title %}
   Каталог
 {% endblock title %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'css/list.css' %}">
+
+
   <div class="list">
     <div class="sidebar">
       <h3>Категории</h3>
@@ -29,7 +34,7 @@
           {% for product in products %} 
             <div class="item">
               <a href="{{ product.get_absolute_url}}" class="item-card">
-                <img src="{% if product.image %}{{ product.image.url }}{% else %} {% static "img\noimage.jpg" %}{% endif %}" alt="detail__img" class="item-img" width="150">
+                <img src="{% if product.image %}{{ product.image.url }}{% else %} {% static "img/noimage.jpg" %}{% endif %}" alt="detail__img" class="item-img" width="150">
                 <h5 class="item-title">{{ product.name }}</h5>
                 {% if product.discount %}
                   <div class="card__discount">
@@ -44,21 +49,21 @@
           {% endfor %}
         </div>
       </div>
-      <ul class="pagination">
-        <li class="{% if not products.has_previous %}disabled{% endif %}">
-          <a href="{% if products.has_previous%}?page={{products.previous_page_number}}{% endif %}"><</a>
-        </li>
-        {% for page in products.paginator.page_range %}
-          {% if page >= products.number|add:-2 and page <= products.number|add:2 %}
-            <li>
-              <a href="?page={{page}}" class="{% if products.number == page %}disabled{%endif%}">{{page}}</a>
-            </li>
-          {%endif%}
-        {% endfor %}
-        <li class="{% if not products.has_next %}disabled{% endif %}">
-          <a href="{% if products.has_next %}?page={{ products.next_page_number }}{% endif %}">></a>
-        </li>
-      </ul>
     </div>
   </div>
+  <ul class="pagination">
+    <li class="{% if not products.has_previous %}disabled{% endif %}">
+      <a href="{% if products.has_previous%}?page={{products.previous_page_number}}{% endif %}"><</a>
+    </li>
+    {% for page in products.paginator.page_range %}
+      {% if page >= products.number|add:-2 and page <= products.number|add:2 %}
+        <li>
+          <a href="?page={{page}}" class="{% if products.number == page %}disabled{%endif%}">{{page}}</a>
+        </li>
+      {%endif%}
+    {% endfor %}
+    <li class="{% if not products.has_next %}disabled{% endif %}">
+      <a href="{% if products.has_next %}?page={{ products.next_page_number }}{% endif %}">></a>
+    </li>
+  </ul>
 {% endblock content %}
